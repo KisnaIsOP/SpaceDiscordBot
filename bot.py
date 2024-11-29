@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from cogs.space_facts import SpaceFactsCog
 from cogs.space_updates import SpaceUpdatesCog
 from cogs.space_trivia import SpaceTriviaCog
+from cogs.space_x_launches import SpaceXLaunchesCog
+from cogs.iss_tracker import ISSTrackerCog
 
 # Load environment variables
 load_dotenv()
@@ -22,6 +24,8 @@ class SpaceBot(commands.Bot):
         await self.add_cog(SpaceFactsCog(self))
         await self.add_cog(SpaceUpdatesCog(self))
         await self.add_cog(SpaceTriviaCog(self))
+        await self.add_cog(SpaceXLaunchesCog(self))
+        await self.add_cog(ISSTrackerCog(self))
         
     async def on_ready(self):
         print(f'{self.user} has connected to Discord!')
